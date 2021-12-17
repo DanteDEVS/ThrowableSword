@@ -1,6 +1,6 @@
 <?php
 
-namespace entity/sword/entity;
+namespace entity\sword\entity;
 
 use pocketmine\entity\Entity;
 use pocketmine\Player;
