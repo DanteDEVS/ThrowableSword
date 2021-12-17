@@ -1,0 +1,5 @@
+name: ThrowableSword
+version: 1.0-PM3
+api: 3.0.0
+Author: DanteDev-PM3
+main: entity\sword\Main
