@@ -1,15 +1,14 @@
-
 <?php
 
 namespace entity\sword\tasks;
 
 use pocketmine\scheduler\Task;
+use entity\sword\other\other;
 use entity\sword\entity\Sword;
-use pocketmine\Player;
 
-class otherSwordTask extends Task{
+class CollideTask extends Task{
 
-    public function __construct(Game $plugin, Sword $sword){
+    public function __construct(other $plugin, Sword $sword){
         $this->plugin = $plugin;
         $this->sword = $sword;
     }
@@ -18,9 +17,9 @@ class otherSwordTask extends Task{
         if(!$this->sword->isClosed()){
             foreach($this->plugin->players as $player){
                 if($this->sword->asVector3()->distance($player) < 5){
-                    if($this->plugin->getMurderer() !== $player){ // This part of code is from dctxgames murdermystery //    
-                        $this->plugin->killPlayer($player, "§fSome killed you by throwing an iron Sword!");
-                        $this->plugin->plugin->getScheduler()->scheduleDelayedTask(new DespawnSwordEntity($this->sword), 0);
+                    if($this->plugin->getMurderer() !== $player){
+                        $this->plugin->killPlayer($player, "§eMy guy really threw a sword and killed you");
+                        $this->plugin->plugin->getScheduler()->scheduleDelayedTask(new despawnsword($this->sword), 0);
                     }
                 }
             }
