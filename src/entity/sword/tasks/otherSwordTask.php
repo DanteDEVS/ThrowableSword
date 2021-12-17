@@ -6,7 +6,7 @@ use pocketmine\scheduler\Task;
 use entity\sword\other\other;
 use entity\sword\entity\Sword;
 
-class CollideTask extends Task{
+class otherSwordTask extends Task{
 
     public function __construct(other $plugin, Sword $sword){
         $this->plugin = $plugin;
