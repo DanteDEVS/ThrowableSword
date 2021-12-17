@@ -16,7 +16,6 @@ class Sword_Stuff extends Sword{
     public function onInteract(PlayerInteractEvent $event){
         $player = $event->getPlayer();
         $item = $event->getItem();
-            }
             if($event->getItem()->getId() == Item::IRON_SWORD){
                 if(!isset($this->cooldown[$player->getName()])){
                     if($this->phase == 1){
