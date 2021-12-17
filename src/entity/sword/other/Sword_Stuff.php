@@ -17,8 +17,9 @@ class Sword_Stuff extends Sword{
         $player = $event->getPlayer();
         $item = $event->getItem();
             if($event->getItem()->getId() == Item::IRON_SWORD){
-                if(!isset($this->cooldown[$player->getName()])){
-                    if($this->phase == 1){
+                if($event->getItem()->getName("Knife");
+                    if(!isset($this->cooldown[$player->getName()])){
+                       if($this->phase == 1){
                         $this->createSwordEntity($player);
                     }
                 }
