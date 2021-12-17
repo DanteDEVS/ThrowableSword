@@ -1,0 +1,9 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/DanteDEVS/ThrowableSword
+build-by-default: true
+branches:
+- main
+projects:
+  ThrowableSword:
+    path: ""
+    icon: "icon.png" 
+...
