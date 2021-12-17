@@ -5,5 +5,5 @@ branches:
 projects:
   ThrowableSword:
     path: ""
-    icon: "icon.png" 
+    icon: "sword.png" 
 ...
