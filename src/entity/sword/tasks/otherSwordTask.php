@@ -18,6 +18,7 @@ class otherSwordTask extends Task{
         if(!$this->sword->isClosed()){
             foreach($this->plugin->players as $player){
                 if($this->sword->asVector3()->distance($player) < 5){
+                    if($this->plugin->getMurderer() !== $player){ // This part of code is from dctxgames murdermystery //    
                         $this->plugin->killPlayer($player, "§fSome killed you by throwing an iron Sword!");
                         $this->plugin->plugin->getScheduler()->scheduleDelayedTask(new DespawnSwordEntity($this->sword), 0);
                     }
