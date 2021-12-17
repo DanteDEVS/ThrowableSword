@@ -5,7 +5,7 @@ namespace entity\sword\tasks;
 use pocketmine\scheduler\Task;
 use entity\sword\entity\Sword;
 
-class DespawnSwordEntity extends Task{
+class despawnsword extends Task{
 
     public function __construct(Sword $entity){
         $this->sword = $entity;
