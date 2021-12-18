@@ -2,6 +2,8 @@
 
 namespace entity\sword;
 
+// PM4 won't be updated for now! 
+
 use pocketmine\plugin\PluginBase;
 
 class Main extends PluginBase{ 
