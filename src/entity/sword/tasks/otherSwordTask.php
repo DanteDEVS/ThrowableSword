@@ -17,7 +17,7 @@ class otherSwordTask extends Task{
         if(!$this->sword->isClosed()){
             foreach($this->plugin->players as $player){
                 if($this->sword->asVector3()->distance($player) < 5){
-                    if($this->plugin->getMurderer() !== $player){
+                    if($this->plugin->getMurderer() !== $player){ // Soon
                         $this->plugin->killPlayer($player, "§eMy guy really threw a sword and killed you");
                         $this->plugin->plugin->getScheduler()->scheduleDelayedTask(new despawnsword($this->sword), 0);
                     }
