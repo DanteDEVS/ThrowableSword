@@ -9,16 +9,16 @@ use entity\sword\entity\Sword;
 
 class Main extends PluginBase{ 
 
-  public function onLoad(){
+  public function onLoad() : void{
     $this->getLogger()->info("Loading Throwable Sword");
   }
     
-  public function onEnable(){
+  public function onEnable() : void{
     $this->getLogger()->info("Enabled Throwable Sword");
     Entity::registerEntity(Sword::class, true);
   }
   
-  public function onDisable(){
+  public function onDisable() : void{
     $this->getLogger()->info("Disabled Throwable Sword");   
   }
 
