@@ -1,2 +1,2 @@
 # ThrowableSword
-The code of dctxgames murdermystery throwable sword
+THIS PLUGIN WILL DISCONTINUE
