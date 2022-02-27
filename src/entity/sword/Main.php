@@ -2,10 +2,9 @@
 
 namespace entity\sword;
 
-// PM4 won't be updated for now! 
-
 use pocketmine\plugin\PluginBase;
 use pocketmine\entity\Entity;
+use pocketmine\entity\EntityFactory;
 
 use entity\sword\entity\Sword;
 
@@ -17,7 +16,7 @@ class Main extends PluginBase{
     
   public function onEnable() : void{
     $this->getLogger()->info("Enabled Throwable Sword");
-    Entity::registerEntity(Sword::class, true);
+    EntityFactory::register(Sword::class, true);
   }
   
   public function onDisable() : void{
