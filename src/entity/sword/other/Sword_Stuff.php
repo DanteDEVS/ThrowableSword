@@ -10,6 +10,7 @@ use pocketmine\item\ItemIds;
 use pocketmine\block\Block;
 use pocketmine\player\Player;
 use entity\sword\entity\Sword;
+use entity\sword\tasks\despawnsword;
 use pocketmine\entity\Location;
 use pocketmine\entity\NBTEntity; // custom path
 
@@ -19,14 +20,11 @@ class Sword_Stuff extends Sword{
         $player = $event->getPlayer();
         $item = $event->getItem();
             if($event->getItem()->getId() == ItemIds::IRON_SWORD){
-                if(!isset($this->cooldown[$player->getName()])){
-                    if($this->phase == 1){
-                        $this->createSwordEntity($player);
-                    }
-                }
+                 $this->createSword($player);
             }
         }
-    
+    }
+
     public function createSword(Player $player, Location $location){
         $nbt = NBTEntity::createBaseNBT(
             $player->getTargetBlock(2),
@@ -35,13 +33,13 @@ class Sword_Stuff extends Sword{
             $location->pitch
         );
         
-        $sword = new Sword($player->getLevel(), $nbt);
+        $sword = new Sword($player->getWorld(), $nbt);
         $sword->setMotion($sword->getMotion()->multiply(1.4));
         $sword->setPose();
         $sword->setInvisible();
         $sword->spawnToAll();
         $this->plugin->getScheduler()->scheduleRepeatingTask(new CollideTask($this, $sword), 0);
-        $this->plugin->getScheduler()->scheduleDelayedTask(new DespawnSwordEntity($sword), 100);
+        $this->plugin->getScheduler()->scheduleDelayedTask(new despawnsword($sword), 100);
         $this->cooldown[$player->getName()] = microtime(true) + 7;
     }
 }
