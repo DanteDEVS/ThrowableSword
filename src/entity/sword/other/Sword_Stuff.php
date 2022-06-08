@@ -22,7 +22,6 @@ class Sword_Stuff extends Sword{
             if($event->getItem()->getId() == ItemIds::IRON_SWORD){
                  $this->createSword($player);
             }
-        }
     }
 
     public function createSword(Player $player, Location $location){
