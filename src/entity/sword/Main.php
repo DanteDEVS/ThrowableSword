@@ -20,7 +20,7 @@ class Main extends PluginBase{
   public function onEnable() : void{
       $this->getLogger()->info("Enabled Throwable Sword");
 	    EntityFactory::getInstance()->register(Sword::class, function(World $world, CompoundTag $nbt) : Sword{
-		          return new SwordEntity(EntityDataHelper::parseLocation($nbt, $world), null, $nbt);
+		          return new Sword(EntityDataHelper::parseLocation($nbt, $world), null, $nbt);
 	    }, ['Sword']);        
   }
   
