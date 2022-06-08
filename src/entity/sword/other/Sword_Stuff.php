@@ -10,6 +10,7 @@ use pocketmine\item\ItemIds;
 use pocketmine\block\Block;
 use pocketmine\player\Player;
 use entity\sword\entity\Sword;
+use pocketmine\entity\Location;
 use pocketmine\entity\NBTEntity; // custom path
 
 class Sword_Stuff extends Sword{  
