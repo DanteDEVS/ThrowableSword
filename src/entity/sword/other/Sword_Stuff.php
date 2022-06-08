@@ -8,15 +8,16 @@ use pocketmine\item\Item;
 use pocketmine\item\ItemFactory;
 use pocketmine\item\ItemIds;
 use pocketmine\block\Block;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use entity\sword\entity\Sword;
+use pocketmine\entity\NBTEntity; // custom path
 
 class Sword_Stuff extends Sword{  
 
     public function onInteract(PlayerInteractEvent $event){
         $player = $event->getPlayer();
         $item = $event->getItem();
-            if($event->getItem()->getId() == Item::IRON_SWORD){
+            if($event->getItem()->getId() == ItemIds::IRON_SWORD){
                 if(!isset($this->cooldown[$player->getName()])){
                     if($this->phase == 1){
                         $this->createSwordEntity($player);
@@ -25,12 +26,12 @@ class Sword_Stuff extends Sword{
             }
         }
     
-    public function createSword(Player $player){
-        $nbt = Entity::createBaseNBT(
+    public function createSword(Player $player, Location $location){
+        $nbt = NBTEntity::createBaseNBT(
             $player->getTargetBlock(2),
             $player->getDirectionVector(),
-            $player->yaw - 75,
-            $player->pitch
+            $location->yaw - 75,
+            $location->pitch
         );
         
         $sword = new Sword($player->getLevel(), $nbt);
