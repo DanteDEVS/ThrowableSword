@@ -1,5 +1,5 @@
 name: ThrowableSword
 version: 1.0-PM4
 api: 4.0.0
-Author: DanteDev-PM4
+Authors: ["DanteDev", "Ley", "ItsToxicGG"]
 main: entity\sword\Main
