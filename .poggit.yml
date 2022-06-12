@@ -7,6 +7,6 @@ projects:
     path: ""
     icon: "sword.png" 
     libs:
-      - src: DanteDevs
+      - src: DanteDevs/EntityPM3
         version: ^1.0.0
 ...
