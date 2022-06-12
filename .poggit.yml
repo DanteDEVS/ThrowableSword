@@ -7,6 +7,6 @@ projects:
     path: ""
     icon: "sword.png" 
     libs:
-      - src: DanteDevs/DanteDevs
+      - src: DanteDevs/CustomEntity
         version: ^1.0.0
 ...
