@@ -6,4 +6,7 @@ projects:
   ThrowableSword:
     path: ""
     icon: "sword.png" 
+    libs:
+      - src: DanteDevs/De
+        version: ^1.0.0
 ...
