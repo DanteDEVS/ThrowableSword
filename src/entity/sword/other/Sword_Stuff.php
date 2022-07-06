@@ -16,7 +16,7 @@ use pocketmine\entity\NBTEntity; // custom path
 
 class Sword_Stuff extends Sword{  
     
-    public $cooldown
+    public $cooldown;
 
     public function onInteract(PlayerInteractEvent $event){
         $player = $event->getPlayer();
@@ -24,7 +24,7 @@ class Sword_Stuff extends Sword{
         
         if($event->getItem()->getId() == ItemIds::IRON_SWORD){
            if(!isset($this->cooldown[$player->getName()])){            
-               $this->createSword($player, $locaiton);
+               $this->createSword($player, $location);
         }
     }
 
