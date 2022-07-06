@@ -22,9 +22,10 @@ class Sword_Stuff extends Sword{
         $player = $event->getPlayer();
         $item = $event->getItem();
         
-        if($event->getItem()->getId() == ItemIds::IRON_SWORD){
-           if(!isset($this->cooldown[$player->getName()])){            
-               $this->createSword($player, $location);
+        if($event->getAction() === $event::RIGHT_CLICK_BLOCK){        
+           if($event->getItem()->getId() == ItemIds::IRON_SWORD){
+              if(!isset($this->cooldown[$player->getName()])){            
+                 $this->createSword($player, $location);
            }
         }
     }
