@@ -1,6 +1,6 @@
 <?php
 
-namespace mm\tasks;
+namespace entity\sword\tasks;
 
 use pocketmine\scheduler\Task;
 use entity\sword\entity\Sword;
